@@ -339,6 +339,7 @@ export interface SendOptions {
   address?: string;
   amount?: number | string;
   data?: string;
+  feeLimit?: string;
   message?: string;
   walletPassphrase?: string;
   prv?: string;
@@ -352,6 +353,7 @@ export interface SendManyOptions {
   recipients?: {
     address: string;
     amount: string | number;
+    feeLimit?: string;
     data?: string;
   }[];
   numBlocks?: number;
@@ -500,7 +502,7 @@ export class Wallet {
   prebuildWhitelistedParams(): string[] {
     return [
       'addressType', 'changeAddress', 'consolidateAddresses', 'cpfpFeeRate', 'cpfpTxIds', 'enforceMinConfirmsForChange',
-      'feeRate', 'gasLimit', 'gasPrice', 'idfSignedTimestamp', 'idfUserId', 'idfVersion', 'instant',
+      'feeRate', 'gasLimit', 'gasPrice', 'idfSignedTimestamp', 'idfUserId', 'idfVersion', 'instant', 'feeLimit',
       'lastLedgerSequence', 'ledgerSequenceDelta', 'maxFee', 'maxFeeRate', 'maxValue', 'memo', 'transferId', 'message', 'minConfirms',
       'minValue', 'noSplitChange', 'numBlocks', 'recipients', 'reservation', 'sequenceId', 'strategy',
       'targetWalletUnspents', 'trustlines', 'type', 'unspents', 'nonParticipation', 'validFromBlock', 'validToBlock', 'messageKey',
